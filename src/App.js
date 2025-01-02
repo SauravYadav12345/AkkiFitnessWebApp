@@ -11,6 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import CalorieTracker from "./pages/CalorieTracker";
 import FavSection from "./pages/FavSection"; // Import the component for Favorite Section
 import { FavoritesProvider } from "./contexts/FavoritesContext";
+import BMICalculator from "./components/BMICalculator";
 
 function App() {
   return (
@@ -48,6 +49,14 @@ function App() {
                 element={
                   <PrivateRoute>
                     <CalorieTracker />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/bmi-calculator"
+                element={
+                  <PrivateRoute>
+                    <BMICalculator />
                   </PrivateRoute>
                 }
               />

@@ -58,6 +58,12 @@ const Header = () => {
           >
             Calorie Tracker
           </Link>
+          <Link
+            to="/bmi-calculator"
+            className="hover:text-yellow-300 transition"
+          >
+            BMI Calculator
+          </Link>
           <Link to="/fav-section" className="hover:text-yellow-300 transition">
             Favorites
           </Link>
@@ -118,6 +124,9 @@ const Header = () => {
           className="hover:text-yellow-300 transition"
         >
           Calorie Tracker
+        </Link>
+        <Link to="/bmi-calculator" className="hover:text-yellow-300 transition">
+          BMI Calculator
         </Link>
         <Link to="/fav-section" className="hover:text-yellow-300 transition">
           Favorites
