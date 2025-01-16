@@ -76,6 +76,12 @@ const Header = () => {
           >
             Workout Planner
           </Link>
+          <Link
+            to="/nutrition"
+            className="hover:text-yellow-300 transition"
+          >
+            Nutrition
+          </Link>
           <Link to="/fav-section" className="hover:text-yellow-300 transition">
             Favorites
           </Link>
@@ -170,6 +176,13 @@ const Header = () => {
             onClick={handleMenuToggle}
           >
             Workout Planner
+          </Link>
+          <Link
+            to="/nutrition"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
+            Nutrition
           </Link>
           <Link to="/fav-section" className="hover:text-yellow-300 transition" onClick={handleMenuToggle}>
             Favorites

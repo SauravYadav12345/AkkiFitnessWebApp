@@ -13,6 +13,7 @@ import FavSection from "./pages/FavSection"; // Import the component for Favorit
 import { FavoritesProvider } from "./contexts/FavoritesContext";
 import BMICalculator from "./components/BMICalculator";
 import WorkoutPlanner from "./components/WorkoutPlanner";
+import Nutrition from "./components/Nutrition";
 
 function App() {
   return (
@@ -66,6 +67,14 @@ function App() {
                 element={
                   <PrivateRoute>
                     <WorkoutPlanner />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/nutrition"
+                element={
+                  <PrivateRoute>
+                    < Nutrition />
                   </PrivateRoute>
                 }
               />
