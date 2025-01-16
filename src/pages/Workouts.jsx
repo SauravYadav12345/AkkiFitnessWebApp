@@ -98,7 +98,7 @@ const Workouts = () => {
 
   return (
     <div
-      className="relative min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden text-white"
+      className="relative min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden text-white mt-16"
       style={{
         background:
           "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)",

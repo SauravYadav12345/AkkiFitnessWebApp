@@ -155,7 +155,7 @@ const CalorieTracker = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 mt-16">
       <h2 className="text-xl font-semibold mb-4 text-center">
         Calorie Tracker
       </h2>

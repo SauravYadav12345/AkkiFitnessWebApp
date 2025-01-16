@@ -49,7 +49,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white mt-16">
       {/* Hero Section */}
       <motion.div
         className="container mx-auto text-center py-20"

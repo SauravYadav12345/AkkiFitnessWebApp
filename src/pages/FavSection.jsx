@@ -13,7 +13,7 @@ const FavSection = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 mt-16">
       <h2 className="text-lg font-bold mb-6 text-center">Your Favorite Workouts</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {favorites.map((workout, index) => (
