@@ -44,7 +44,7 @@ const Header = () => {
 
         {/* Navigation Links */}
         <motion.nav
-          className="hidden md:flex space-x-6 text-sm lg:text-base"
+          className="hidden md:flex space-x-4 text-sm lg:text-base"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -76,11 +76,11 @@ const Header = () => {
           >
             Workout Planner
           </Link>
-          <Link
-            to="/nutrition"
-            className="hover:text-yellow-300 transition"
-          >
-            Nutrition
+          <Link to="/nutrition" className="hover:text-yellow-300 transition">
+            Nutrition Info
+          </Link>
+          <Link to="/diet-planner" className="hover:text-yellow-300 transition">
+            Diet Planner
           </Link>
           <Link to="/fav-section" className="hover:text-yellow-300 transition">
             Favorites
@@ -147,13 +147,25 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Link to="/" className="hover:text-yellow-300 transition" onClick={handleMenuToggle}>
+          <Link
+            to="/"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
             Home
           </Link>
-          <Link to="/workouts" className="hover:text-yellow-300 transition" onClick={handleMenuToggle}>
+          <Link
+            to="/workouts"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
             Workouts
           </Link>
-          <Link to="/profile" className="hover:text-yellow-300 transition" onClick={handleMenuToggle}>
+          <Link
+            to="/profile"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
             Profile
           </Link>
           <Link
@@ -182,12 +194,27 @@ const Header = () => {
             className="hover:text-yellow-300 transition"
             onClick={handleMenuToggle}
           >
-            Nutrition
+            Nutrition Info
           </Link>
-          <Link to="/fav-section" className="hover:text-yellow-300 transition" onClick={handleMenuToggle}>
+          <Link
+            to="/diet-planner"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
+            Diet Planner
+          </Link>
+          <Link
+            to="/fav-section"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
             Favorites
           </Link>
-          <Link to="/signin" className="hover:text-yellow-300 transition" onClick={handleMenuToggle}>
+          <Link
+            to="/signin"
+            className="hover:text-yellow-300 transition"
+            onClick={handleMenuToggle}
+          >
             Login
           </Link>
           <Link

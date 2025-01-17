@@ -14,6 +14,7 @@ import { FavoritesProvider } from "./contexts/FavoritesContext";
 import BMICalculator from "./components/BMICalculator";
 import WorkoutPlanner from "./components/WorkoutPlanner";
 import Nutrition from "./components/Nutrition";
+import DietPlanner from "./components/DietPlanner";
 
 function App() {
   return (
@@ -74,7 +75,15 @@ function App() {
                 path="/nutrition"
                 element={
                   <PrivateRoute>
-                    < Nutrition />
+                    <Nutrition />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/diet-planner"
+                element={
+                  <PrivateRoute>
+                    <DietPlanner />
                   </PrivateRoute>
                 }
               />
