@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -85,16 +93,19 @@ const Header = () => {
           <Link to="/fav-section" className="hover:text-yellow-300 transition">
             Favorites
           </Link>
-          <Link to="/signin" className="hover:text-yellow-300 transition">
-            Login
-          </Link>
-          <Link
-            to="/"
-            onClick={handleSignOut}
-            className="hover:text-red-300 transition"
-          >
-            Logout
-          </Link>
+          {isLoggedIn ? (
+            <Link
+              to="/"
+              onClick={handleSignOut}
+              className="hover:text-red-300 transition"
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link to="/signin" className="hover:text-yellow-300 transition">
+              Login
+            </Link>
+          )}
         </motion.nav>
 
         {/* Mobile Menu Icon */}
@@ -210,23 +221,26 @@ const Header = () => {
           >
             Favorites
           </Link>
-          <Link
-            to="/signin"
-            className="hover:text-yellow-300 transition"
-            onClick={handleMenuToggle}
-          >
-            Login
-          </Link>
-          <Link
-            to="/"
-            onClick={() => {
-              handleSignOut();
-              handleMenuToggle();
-            }}
-            className="hover:text-red-300 transition"
-          >
-            Logout
-          </Link>
+          {isLoggedIn ? (
+            <Link
+              to="/"
+              onClick={() => {
+                handleSignOut();
+                handleMenuToggle();
+              }}
+              className="hover:text-red-300 transition"
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link
+              to="/signin"
+              className="hover:text-yellow-300 transition"
+              onClick={handleMenuToggle}
+            >
+              Login
+            </Link>
+          )}
         </motion.div>
       )}
     </motion.header>

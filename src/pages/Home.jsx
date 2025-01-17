@@ -1,10 +1,18 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
 import { motion } from "framer-motion"; // For animations
 import { FaStar } from "react-icons/fa";
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const testimonials = [
     {
@@ -64,14 +72,12 @@ const Home = () => {
           Explore workouts, track your progress, and achieve your fitness goals.
         </p>
         <div className="space-x-4">
-          {!isLoggedIn && ( // Show the button only if the user is not logged in
-            <Link
-              to="/signup"
-              className="bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 shadow-lg transform hover:scale-105 transition"
-            >
-              Get Started
-            </Link>
-          )}
+          <Link
+            to={isLoggedIn ? "/profile" : "/signin"}
+            className="bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 shadow-lg transform hover:scale-105 transition"
+          >
+            {isLoggedIn ? "Get Started" : "Get Started"}
+          </Link>
           <Link
             to="/workouts"
             className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 shadow-lg transform hover:scale-105 transition"
