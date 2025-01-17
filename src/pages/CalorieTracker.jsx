@@ -7,6 +7,7 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import UserInitials from "../components/UserInitials";
 
 const CalorieTracker = () => {
   const [mealName, setMealName] = useState("");
@@ -156,6 +157,7 @@ const CalorieTracker = () => {
 
   return (
     <div className="p-4 mt-16">
+     < UserInitials />
       <h2 className="text-xl font-semibold mb-4 text-center">
         Calorie Tracker
       </h2>

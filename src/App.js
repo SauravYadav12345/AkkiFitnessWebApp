@@ -87,6 +87,7 @@ function App() {
                   </PrivateRoute>
                 }
               />
+
               <Route
                 path="/fav-section"
                 element={

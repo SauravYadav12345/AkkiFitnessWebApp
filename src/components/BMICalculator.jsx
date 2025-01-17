@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserInitials from "./UserInitials";
 
 const BMICalculator = () => {
   const [weight, setWeight] = useState("");
@@ -36,6 +37,7 @@ const BMICalculator = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-6">
       <div className="p-6 bg-white rounded-md shadow-md max-w-md mx-auto mt-24">
+      < UserInitials />
         <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">BMI Calculator</h2>
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-2">Weight (kg):</label>

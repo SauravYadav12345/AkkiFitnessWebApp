@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFavorites } from "../contexts/FavoritesContext";
-import { auth, db } from "../firebase";
+//import { auth, db } from "../firebase";
+import UserInitials from "../components/UserInitials";
 
 const Workouts = () => {
   const { favorites, addFavorite, removeFavorite } = useFavorites();
@@ -108,6 +109,7 @@ const Workouts = () => {
       <div className="absolute inset-0 -z-10">
         <div className="particle-animation"></div>
       </div>
+      < UserInitials />
 
       <div className="container mx-auto p-8">
         <h1 className="text-4xl font-bold text-center mb-6">Workouts</h1>

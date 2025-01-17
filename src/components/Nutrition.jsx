@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import UserInitials from "./UserInitials";
 
 const Nutrition = () => {
   const [query, setQuery] = useState("");
@@ -47,6 +48,7 @@ const Nutrition = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 p-4 mt-16">
+      < UserInitials />
       <h1 className="text-2xl font-bold mb-4 text-center">
         Flexible Nutrition Info
       </h1>

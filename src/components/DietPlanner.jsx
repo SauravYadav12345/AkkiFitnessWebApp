@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import UserInitials from "./UserInitials";
 
 const DietPlanner = () => {
   const [userDetails, setUserDetails] = useState({
@@ -99,6 +100,7 @@ const DietPlanner = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6 mt-16">
       <div className="max-w-lg w-full bg-white rounded-lg shadow-lg p-6">
+        < UserInitials />
         <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center">
           Diet Planner
         </h1>

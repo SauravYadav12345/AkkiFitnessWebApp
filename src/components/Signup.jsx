@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Include updateProfile
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +23,13 @@ const Signup = () => {
 
       // Set the display name in Firebase Auth
       await updateProfile(user, {
+        displayName: name,
+      });
+
+      //adding user's data to firestore
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        email: user.email,
         displayName: name,
       });
 

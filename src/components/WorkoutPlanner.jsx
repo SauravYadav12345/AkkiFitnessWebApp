@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion"; // For animations
 import { FaPlayCircle } from "react-icons/fa";
+import UserInitials from "./UserInitials";
 
 const workouts = {
   "Weight Loss": [
@@ -86,7 +87,8 @@ const WorkoutPlanner = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 rounded-md shadow-md max-w-lg mx-auto text-white mt-16">
+    <div className="p-6 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 rounded-md shadow-md max-w-lg mx-auto text-white mt-16 mb-5">
+      <UserInitials />
       <motion.h2
         className="text-2xl font-bold mb-4 text-center"
         initial={{ opacity: 0, y: -20 }}

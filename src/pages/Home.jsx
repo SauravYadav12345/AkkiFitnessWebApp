@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { motion } from "framer-motion"; // For animations
 import { FaStar } from "react-icons/fa";
+import UserInitials from "../components/UserInitials";
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,6 +59,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white mt-16">
+      < UserInitials />
       {/* Hero Section */}
       <motion.div
         className="container mx-auto text-center py-20"

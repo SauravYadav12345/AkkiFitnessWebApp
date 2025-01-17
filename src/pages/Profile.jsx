@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { auth, db } from "../firebase"; // Import Firebase auth and Firestore
 import { FaUserCircle } from "react-icons/fa"; // Default user icon
 import { doc, getDoc } from "firebase/firestore"; // Firestore methods
+import UserInitials from "../components/UserInitials";
 
 const Profile = () => {
   const [userName, setUserName] = useState(""); // Store the user's name
@@ -30,6 +31,7 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto p-4 mt-16">
+      < UserInitials />
       <h1 className="text-2xl font-bold text-center mb-4">Profile</h1>
       {user ? (
         <div className="text-center">
@@ -39,7 +41,7 @@ const Profile = () => {
           </div>
 
           {/* Display Name and Email */}
-          <p className="text-xl font-semibold">{userName || "User Name"}</p>
+          <p className="text-xl font-semibold mb-3">{userName || "User Name"}</p>
           <p>Email: {user.email}</p>
         </div>
       ) : (
